@@ -13,7 +13,7 @@
         ],
         "web.assets_frontend": [
             "link_color_primary/static/src/js/link_color_primary.js",
-            "link_color_primary/static/src/scss/link_color_primary.scss",
+            "link_color_primary/static/src/css/link_color_primary.css",
         ],
     },
     "installable": True,
