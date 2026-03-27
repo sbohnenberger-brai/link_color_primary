@@ -1,1 +1,152 @@
+:root {
+    --link-color-primary: var(--bs-primary, #005bbb);
+}
 
+/* --------------------------------------------------
+   1) Fallback für erzeugte Links im Rich Text
+   -------------------------------------------------- */
+.o-mail-Message-richBody a[href]:not(.btn):not([class*="btn-"]),
+.o-mail-Message-richBody a[href]:not(.btn):not([class*="btn-"]) *,
+.o_field_html a[href]:not(.btn):not([class*="btn-"]),
+.o_field_html a[href]:not(.btn):not([class*="btn-"]) *,
+[contenteditable="true"] a[href]:not(.btn):not([class*="btn-"]),
+[contenteditable="true"] a[href]:not(.btn):not([class*="btn-"]) * {
+    color: var(--link-color-primary) !important;
+}
+
+/* Hover */
+.o-mail-Message-richBody a[href]:hover:not(.btn):not([class*="btn-"]),
+.o_field_html a[href]:hover:not(.btn):not([class*="btn-"]),
+[contenteditable="true"] a[href]:hover:not(.btn):not([class*="btn-"]) {
+    color: var(--link-color-primary) !important;
+}
+
+/* Visited */
+.o-mail-Message-richBody a[href]:visited:not(.btn):not([class*="btn-"]),
+.o_field_html a[href]:visited:not(.btn):not([class*="btn-"]),
+[contenteditable="true"] a[href]:visited:not(.btn):not([class*="btn-"]) {
+    color: var(--link-color-primary) !important;
+}
+
+/* --------------------------------------------------
+   2) Nur grüne Inline-Elemente im Message-Body abfangen
+   -------------------------------------------------- */
+.o-mail-Message-richBody *[style*="#008f8c"],
+.o-mail-Message-richBody *[style*="#008F8C"],
+.o_field_html *[style*="#008f8c"],
+.o_field_html *[style*="#008F8C"],
+[contenteditable="true"] *[style*="#008f8c"],
+[contenteditable="true"] *[style*="#008F8C"] {
+    color: var(--link-color-primary) !important;
+    border-color: var(--link-color-primary) !important;
+    border-left-color: var(--link-color-primary) !important;
+    border-right-color: var(--link-color-primary) !important;
+    border-top-color: var(--link-color-primary) !important;
+    border-bottom-color: var(--link-color-primary) !important;
+}
+
+/* --------------------------------------------------
+   3) Farbchips / Picker / Dropdowns / Popovers
+   -------------------------------------------------- */
+.dropdown-menu [style*="#008f8c"],
+.dropdown-menu [style*="#008F8C"],
+.popover [style*="#008f8c"],
+.popover [style*="#008F8C"],
+.modal [style*="#008f8c"],
+.modal [style*="#008F8C"],
+.o-popover [style*="#008f8c"],
+.o-popover [style*="#008F8C"],
+.dropdown-menu [data-color="#008f8c"],
+.dropdown-menu [data-color="#008F8C"],
+.popover [data-color="#008f8c"],
+.popover [data-color="#008F8C"],
+.modal [data-color="#008f8c"],
+.modal [data-color="#008F8C"],
+.o-popover [data-color="#008f8c"],
+.o-popover [data-color="#008F8C"] {
+    color: var(--link-color-primary) !important;
+    background-color: var(--link-color-primary) !important;
+    border-color: var(--link-color-primary) !important;
+}
+
+/* --------------------------------------------------
+   4) Links in Portal / Chatter / HTML-Feldern
+   -------------------------------------------------- */
+.o_portal .o-mail-Message-richBody a[href]:not(.btn):not([class*="btn-"]),
+.o_portal .o-mail-Message-richBody a[href]:not(.btn):not([class*="btn-"]) *,
+.o_portal .o_field_html a[href]:not(.btn):not([class*="btn-"]),
+.o_portal .o_field_html a[href]:not(.btn):not([class*="btn-"]) * {
+    color: var(--link-color-primary) !important;
+}
+
+/* --------------------------------------------------
+   5) Buttons ausdrücklich ausnehmen
+   -------------------------------------------------- */
+a.btn,
+a[class*="btn-"],
+button,
+button * {
+    color: inherit;
+}
+
+/* --------------------------------------------------
+   6) Mail-Quote / Signatur-Links ebenfalls angleichen
+   -------------------------------------------------- */
+.o-mail-Message-richBody [data-o-mail-quote="1"] a[href],
+.o-mail-Message-richBody [data-o-mail-quote="1"] a[href] *,
+.o-mail-Message-richBody [data-o-mail-quote="1"] font[style*="#008f8c"],
+.o-mail-Message-richBody [data-o-mail-quote="1"] font[style*="#008F8C"] {
+    color: var(--link-color-primary) !important;
+    border-color: var(--link-color-primary) !important;
+}
+
+/* --------------------------------------------------
+   7) Generischer Catch-All für Odoo-Grün
+   Nur in Richtext-/Editor-Kontexten
+   -------------------------------------------------- */
+.o-mail-Message-richBody [style*="color:#008f8c"],
+.o-mail-Message-richBody [style*="color: #008f8c"],
+.o-mail-Message-richBody [style*="color:#008F8C"],
+.o-mail-Message-richBody [style*="color: #008F8C"],
+.o_field_html [style*="color:#008f8c"],
+.o_field_html [style*="color: #008f8c"],
+.o_field_html [style*="color:#008F8C"],
+.o_field_html [style*="color: #008F8C"],
+[contenteditable="true"] [style*="color:#008f8c"],
+[contenteditable="true"] [style*="color: #008f8c"],
+[contenteditable="true"] [style*="color:#008F8C"],
+[contenteditable="true"] [style*="color: #008F8C"] {
+    color: var(--link-color-primary) !important;
+}
+
+/* --------------------------------------------------
+   8) Border-Farben bei Links korrigieren
+   -------------------------------------------------- */
+.o-mail-Message-richBody a[href][style*="border-color:#008f8c"],
+.o-mail-Message-richBody a[href][style*="border-color: #008f8c"],
+.o-mail-Message-richBody a[href][style*="border-left-color:#008f8c"],
+.o-mail-Message-richBody a[href][style*="border-left-color: #008f8c"],
+.o-mail-Message-richBody a[href][style*="border-right-color:#008f8c"],
+.o-mail-Message-richBody a[href][style*="border-right-color: #008f8c"],
+.o-mail-Message-richBody a[href][style*="border-top-color:#008f8c"],
+.o-mail-Message-richBody a[href][style*="border-top-color: #008f8c"],
+.o-mail-Message-richBody a[href][style*="border-bottom-color:#008f8c"],
+.o-mail-Message-richBody a[href][style*="border-bottom-color: #008f8c"] {
+    border-color: var(--link-color-primary) !important;
+    border-left-color: var(--link-color-primary) !important;
+    border-right-color: var(--link-color-primary) !important;
+    border-top-color: var(--link-color-primary) !important;
+    border-bottom-color: var(--link-color-primary) !important;
+}
+
+/* --------------------------------------------------
+   9) Optional: sichtbare Link-Unterstreichung
+   Auskommentiert lassen, wenn nicht gewünscht
+   -------------------------------------------------- */
+/*
+.o-mail-Message-richBody a[href]:not(.btn):not([class*="btn-"]),
+.o_field_html a[href]:not(.btn):not([class*="btn-"]),
+[contenteditable="true"] a[href]:not(.btn):not([class*="btn-"]) {
+    text-decoration: underline !important;
+}
+*/
