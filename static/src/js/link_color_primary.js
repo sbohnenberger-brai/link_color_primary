@@ -69,6 +69,18 @@ function setImportant(el, prop, value) {
     }
 }
 
+function hasBackground(el) {
+    if (!(el instanceof HTMLElement)) return false;
+
+    const style = el.getAttribute("style") || "";
+    const computed = getComputedStyle(el);
+
+    return (
+        style.includes("background-color") ||
+        (computed.backgroundColor && computed.backgroundColor !== "rgba(0, 0, 0, 0)" && computed.backgroundColor !== "transparent")
+    );
+}
+
 function replaceGreenInStyle(el, targetColor) {
     const style = el.getAttribute("style");
     if (!style) return false;
@@ -162,6 +174,16 @@ function patchRenderedAnchor(anchor, targetColor) {
         setImportant(child, "border-top-color", targetColor);
         setImportant(child, "border-bottom-color", targetColor);
     });
+    // 🔥 NEU: Wenn Background gesetzt → Text weiß
+    if (hasBackground(anchor)) {
+        setImportant(anchor, "color", "#ffffff");
+
+        anchor.querySelectorAll("*").forEach((child) => {
+            if (child instanceof HTMLElement) {
+                setImportant(child, "color", "#ffffff");
+            }
+        });
+    }
 }
 
 function patchVisiblePickers(targetColor, root = document) {
