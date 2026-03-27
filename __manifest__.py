@@ -5,7 +5,7 @@
     "category": "Tools",
     "author": "Custom",
     "license": "LGPL-3",
-    "depends": ["web", "web_editor", "mail", "portal"],
+    "depends": ["web", "mail", "portal"],
     "assets": {
         "web.assets_backend": [
             "link_color_primary/static/src/js/link_color_primary.js",
