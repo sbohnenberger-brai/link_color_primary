@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_config_settings_link_color_primary" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.link.color.primary</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Branding" name="link_color_primary_app">
+                    <block title="Backend Editor">
+                        <setting string="Standard-Linkfarbe im Backend"
+                                 help="Diese Farbe wird im Backend-Editor für Link-Picker und als Fallback für erzeugte Links verwendet.">
+                            <field name="link_color_primary" placeholder="#005bbb"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>
