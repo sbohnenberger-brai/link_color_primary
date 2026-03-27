@@ -1,5 +1,5 @@
 :root {
-    --link-color-primary: var(--bs-primary, #005bbb);
+    --link-color-primary: rgb(var(--link-color-rgb, 0, 91, 187));
 }
 
 /* --------------------------------------------------
