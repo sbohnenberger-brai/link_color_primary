@@ -1,0 +1,25 @@
+$o-editor-brand-link: $o-brand-primary !default;
+
+/* Fallback für erzeugte Links im sichtbaren Rich-Body */
+.o-mail-Message-richBody a[href]:not(.btn):not([class*="btn-"]),
+.o-mail-Message-richBody a[href]:not(.btn):not([class*="btn-"]) *,
+.o_field_html a[href]:not(.btn):not([class*="btn-"]),
+.o_field_html a[href]:not(.btn):not([class*="btn-"]) *,
+[contenteditable="true"] a[href]:not(.btn):not([class*="btn-"]),
+[contenteditable="true"] a[href]:not(.btn):not([class*="btn-"]) * {
+    color: $o-editor-brand-link !important;
+}
+
+/* Popup/Palette – sichtbare grüne Chips/Buttons */
+.dropdown-menu [style*="#008f8c"],
+.popover [style*="#008f8c"],
+.modal [style*="#008f8c"],
+.o-popover [style*="#008f8c"],
+.dropdown-menu [data-color="#008f8c"],
+.popover [data-color="#008f8c"],
+.modal [data-color="#008f8c"],
+.o-popover [data-color="#008f8c"] {
+    color: $o-editor-brand-link !important;
+    background-color: $o-editor-brand-link !important;
+    border-color: $o-editor-brand-link !important;
+}
