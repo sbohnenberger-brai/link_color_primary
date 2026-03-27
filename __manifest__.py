@@ -1,6 +1,6 @@
 {
     "name": "Brainson Odoo: Link Color Primary",
-    "version": "19.0.4.0.0",
+    "version": "19.0.5.0.0",
     "summary": "Force Odoo editor links to use your primary brand color",
     "category": "Tools",
     "author": "Custom",
